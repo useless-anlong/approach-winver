@@ -1,0 +1,14 @@
+{
+  "name": "desktop_assistant",
+  "version": "24.0.0",
+  "main": "main.js",
+  "license": "Apache",
+  "author": "AnLong",
+  "description": "desktop_assistant",
+  "productName": "Desktop Annistant",
+  "scripts": {
+    "start": "electron .",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  }
+}

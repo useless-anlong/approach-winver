@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='Style.css'>
+</head>
+
+<body>
+    <script>
+        //禁用右键菜单
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        })
+    </script>
+    <div id="time">
+        <!--时钟-->
+        <script>
+
+            //获取
+            Date.prototype.format = function (fmt) {
+                var o = {
+                    "y+": this.getFullYear, //年
+                    "M+": this.getMonth() + 1, //月份
+                    "d+": this.getDate(), //日
+                    "h+": this.getHours(), //小时
+                    "m+": this.getMinutes(), //分
+                    "s+": this.getSeconds(), //秒
+                };
+                if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+                for (var k in o)
+                    if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                return fmt;
+            }
+
+            //输出
+            // setInterval("document.getElementById('date0').innerHTML = (new Date()).format('yy');", 100);
+            setInterval("document.getElementById('date1').innerHTML = (new Date()).format('MM');", 100);
+            setInterval("document.getElementById('date2').innerHTML = (new Date()).format('dd');", 100);
+            setInterval("document.getElementById('clock1').innerHTML = (new Date()).format('hh');", 100);
+            setInterval("document.getElementById('clock2').innerHTML = (new Date()).format('mm');", 100); 
+        </script>
+        <!--显示日期与时间-->
+        <div id="clock">
+            <div class="clocktext" id="clock1"></div>
+            <div class="clockline"></div>
+            <div class="clocktext" id="clock2"></div>
+        </div>
+        <div id="date">
+            <div id="weekday">
+                <script>
+                    //获取星期
+                    const birthday = new Date();
+                    const Xmas95 = new Date();
+                    const day1 = birthday.getDay();
+                    // Sunday - Saturday : 0 - 6
+                    var options = { weekday: "long" };
+                    document.write(new Intl.DateTimeFormat("en-US", options).format(Xmas95));
+                </script>
+            </div>
+            <div id="datetextBox">
+                <div class="datetext" id="date1"></div>
+                <div class="dateline">/</div>
+                <div class="datetext" id="date2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="appBox">
+        <script>object.onclick = function () { myScript };</script>
+        <div id="applink" class="easinote" onclick="shell.beep()">
+            <h6>希沃白板</h6>
+            <img src="easinote.png" width="32px" height="32px">
+            <div class="iconS"></div>
+        </div>
+        <div id="toolBox">
+            <div id="toolButton" class="about">
+                <div class="iconL"></div>
+                <p>关于</p>
+            </div>
+            <div id="toolButton" class="shutdown" onclick="shell">
+                <div class="iconL"></div>
+                <p>关机</p>
+            </div>
+        </div>
+    </div> -->
+
+</body>
+
+</html>

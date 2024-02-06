@@ -1,0 +1,172 @@
+@font-face {
+    font-family: display;
+    src: url(./Figtree.ttf);
+}
+
+@font-face {
+    font-family: chinese;
+    src: url(./MiSansVF.ttf);
+}
+
+body {
+    font-family: 'display', 'chinese';
+    font-weight: 600;
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 12px 24px;
+    user-select: none;
+    height: calc(100vh - 90px);
+    justify-content: space-between;
+}
+
+.clocktext {
+    /* width: 60px; */
+    font-size: 94px;
+    transition: 1s 0s ease-in-out;
+    font-weight: 400;
+}
+
+#clock1 {
+    color: #FFFFFF;
+}
+
+#clock2 {
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.clockline {
+    background-color: #FFFFFF;
+    opacity: 0.6;
+    width: 8px;
+    height: 28px;
+    animation: revolving 1s 0s infinite;
+    animation-timing-function: ease-in-out;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+#clock {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+#date {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 4px;
+    font-size: 32px;
+    margin-top: -10px;
+}
+
+#datetextBox {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 4px;
+    font-size: 32px;
+}
+
+.datetext {
+    /* width: 60px; */
+    font-size: 34px;
+    transition: 1s 0s ease-in-out;
+    font-weight: 300;
+}
+
+#weekday {
+    /* width: 60px; */
+    font-size: 34px;
+    transition: 1s 0s ease-in-out;
+    opacity: 0.8;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    letter-spacing: 10px;
+}
+
+.dateline {
+    color: #FFFFFF;
+    opacity: 0.6;
+    font-size: 28px;
+    font-weight: 400;
+}
+
+@keyframes revolving {
+    0% {
+        -webkit-transform: perspective(700px) rotateX(90deg);
+    }
+
+    50% {
+        -webkit-transform: perspective(700px) rotateX(0deg);
+    }
+
+    100% {
+        -webkit-transform: perspective(700px) rotateX(-90deg);
+    }
+}
+
+.iconL {
+    font-family: 'Segoe MDL2 Assets';
+    font-size: 14px;
+}
+
+.iconM {
+    font-family: 'Segoe MDL2 Assets';
+    font-size: 12px;
+}
+
+.iconS {
+    font-family: 'Segoe MDL2 Assets';
+    font-size: 10px;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+#toolButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0px 8px;
+}
+
+#toolBox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    color: #FFFFFF;
+    opacity: 0.5;
+    font-weight: normal;
+}
+
+#applink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    color: #FFFFFF;
+    /* opacity: 0.5; */
+    font-weight: normal;
+}
+
+#time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
